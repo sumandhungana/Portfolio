@@ -1,133 +1,190 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-	<title>Suman Dhungana</title>
-</head>
+<!DOCTYPE html> 
+<html>
+  <head>
+    <title>SUMAN DHUNGANA</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+      let nav = document.querySelector("nav");
+      let scrollBtn = document.querySelector(".scroll-button a");
+      let val;
+      window.onscroll = function() {
+        if(document.documentElement.scrollTop > 20){
+          nav.classList.add("sticky");
+          scrollBtn.style.display = "block";
+        }else{
+          nav.classList.remove("sticky");
+          scrollBtn.style.display = "none";
+        }
+      }
+      let body = document.querySelector("body");
+      let navBar = document.querySelector(".navbar");
+      let menuBtn = document.querySelector(".menu-btn");
+      let cancelBtn = document.querySelector(".cancel-btn");
+      menuBtn.onclick = function() {
+        navBar.classList.add("active");
+        menuBtn.style.opacity = "0";
+        menuBtn.style.pointerEvents = "none";
+        body.style.overflowX = "hidden";
+        scrollBtn.style.pointerEvents = "none";
+      }
+      cancelBtn.onclick = function() {
+        navBar.classList.remove("active");
+        menuBtn.style.opacity = "1";
+        menuBtn.style.pointerEvents = "auto";
+        body.style.overflowX = "auto";
+        scrollBtn.style.pointerEvents = "auto";
+      }
+      let navLinks = document.querySelectorAll(".menu li a");
+      for (var i = 0; i < navLinks.length; i++) {
+        navLinks[i].addEventListener("click" , function() {
+          navBar.classList.remove("active");
+          menuBtn.style.opacity = "1";
+          menuBtn.style.pointerEvents = "auto";
+        });
+      }
+    </script>
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
 <body>
-	<table id="header" border="5" width="100%"
-		cellpadding="0" cellspacing="0" bgcolor="#A6442E">
-		<tr>
-			<td>
-				<table border="0" cellpadding="15"
-					cellspacing="0" width="100%" align="center">
-					<tr>
-						<td>
-							
+  <div class="scroll-button">
+    <a href="#home"><i class="fas fa-arrow-up"></i></a>
+  </div>
+  <nav>
+    <div class="navbar">
+      <ul class="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#services">Qualification</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <div class="cancel-btn">
+          <i class="fas fa-times"></i>
+        </div>
+      </ul>
+      <div class="media-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="menu-btn">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
+  <section class="home" id="home">
+    <div class="home-content">
+      <div class="text">
+        <div class="text-one">Hello,</div>
+        <div class="text-two">It's Me Suman Dhungana</div>
+        <div class="text-three">Student of Bachelor of Information Management (BIM)</div>
+        <div class="text-four">Balaju-16, Kathmandu, Nepal</div>
+      </div>
+    </div>
+  </section>
 
-						</td>
-						<td>
-							<img src="s.png" alt="img.png">
-						</td>
+  <!-- About Section Start -->
+  <section class="about" id="about">
+    <div class="content">
+      <div class="title"><span>About Me</span></div>
+      <div class="about-details">
+        <div class="left">
+          <img src="images/suman.jpg" alt="Portfolio">
+        </div>
+        <div class="right">
+          <div class="topic">Passionate to learn Mathematics and Programming</div>
+          <p>Enthusiastic eager to contribute to team success through hardwork.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- My qualification Section Start -->
+  <section class="services" id="services">
+    <div class="content">
+      <div class="title"><span>My Qualification</span></div>
+      <div class="boxes">
+        <div class="box">
+          <div class="icon">
+            <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+          </div>
+          <div class="topic">Gyanamandir Secondary English School /SLC</div>
+          <p>Upto(2015 AD)<br/> Located at Balaju, Kathmandu<br/> Completed with 86.75%</p>
+        </div>
+        <div class="box">
+          <div class="icon">
+            <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+          </div>
+          <div class="topic">Goldengate International College/ plus 2 (Management) </div>
+          <p>(2015 AD-2017 AD)<br/> Located at Battisputali, Kathmandu<br/> Completed with 73.8%</p>
+        </div>
+        <div class="box">
+          <div class="icon">
+            <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+          </div>
+          <div class="topic">National College of Computer Studies/ Bachelor of Information Management</div>
+          <p>(2017 AD- Present)<br/> Located at Paknajol, Kathmandu<br/></p>
+        </div>  
+       </div>
+      </div>
+    </div>
+  </section>
+  <!-- My Skill Section Start -->
+  <section class="skills" id="skills">
+    <div class="content">
+      <div class="title"><span>My Skills</span></div>
+      <div class="skills-details">
+        <div class="text">
+<!--           <div class="topic">Skills Reflects Our Knowledge</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus natus tenetur tempora? Quasi, rem quas omnis. Porro rem aspernatur reiciendis ut praesentium minima ad, quos, officia! Illo libero, et, distinctio repellat sed nesciunt est modi quaerat placeat. Quod molestiae, alias?</p> -->
+          <div class="experience">
+            <div class="num">Skills</div>
+          </div>
+        </div>
+        <div class="boxes">
+          <div class="box">
+            <div class="topic">Web Development</div>
+            <div class="per">A> HTML, CSS and JS</div>
+            <div class="per"><hr/>B>PHP include Laravel and Python include Django</div>
+          </div>
+          <div class="box">
+            <div class="topic">Desktop Application Development</div>
+            <div class="per">A> Java</div> 
+          </div>
+          <div class="box">
+            <div class="topic">Photo and Video Editing</div>
+            <div class="per">A> Photoshop</div>
+            <div class="per"><hr/>B> Filmora</div>
+          </div>
+          <div class="box">
+            <div class="topic">Data Science and Machine Learning</div>
+            <div class="per">A> pandas, Numpy, Seaborn, Pyplot, Cufflinks, Matplotlib</div>
+            <div class="per"><hr/>B> Linear Regression, Logistic Regression, K Nearest Neighbors, Cross Validation</div>
+            <div class="per"><hr/>C> Tensorflow and Keras using Python</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Me Section Start -->
+  <section class="contact" id="contact">
+    <div class="content">
+      <div class="title"><span>Contact Me</span></div>
+      <div class="text">
+                <div class="box">
+          <div class="topic"><i class="fa fa-envelope" aria-hidden="true"></i>
+sumandhungana98@gmail.com</div>
+          <div class="topic"><i class="fa fa-phone" aria-hidden="true"></i>(+977)9869047520</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-						<td>
-							<font face="Comic sans MS" size="6">
-								<img src="">
-								<b>SUMAN DHUNGANA</b>
-							</font>
-						</td>
+   
 
-						<td width="15%">
-							
-						</td>
-
-						<td>
-							<a href="#home" style="text-decoration:none">
-								<font face="Verdana" size="5" color=black>
-									Home
-								</font>
-							</a>
-						</td>
-
-						<td>
-							|
-						</td>
-
-						<td>
-							<a href="#about" style="text-decoration:none">
-								<font face="Verdana" size="5" color=black>
-									Skills
-								</font>
-							</a>
-						</td>
-
-						<td>
-							|
-						</td>
-
-						<td>
-							<a href="#projects" style="text-decoration:none">
-								<font face="Verdana" size="5" color=black>
-									Projects
-								</font>
-							</a>
-						</td>
-
-						<td>
-							|
-						</td>
-
-						<td>
-							<a href="#achievements" style="text-decoration:none">
-								<font face="Verdana" size="5" color=black>
-									Education
-								</font>
-							</a>
-						</td>
-
-						<td>
-							|
-						</td>
-
-						<td>
-							<a href="#contact" style="text-decoration:none">
-								<font face="Verdana" size="5" color=black>
-									Contact
-								</font>
-							</a>
-						</td>
-					</tr>
-				</table>
-			</td>
-		</tr>
-	</table>
-	<!--Header(end)-->
-
-	<!--Home(start)-->
-	<table id="home" border="1" width="100%"
-		cellpadding="20" cellspacing="0" bgcolor="black">
-		<tr>
-			<td>
-				<table border="0" cellpadding="15"
-					cellspacing="0" width="90%" align="center">
-					<tr><font face="Times New Roman"
-									size="6" color="#ffffff">
-									Student of Bachelor in Information Management (BIM)
-								</font>
-						<td align="center" valign="middle">
-							<h3>
-								<font face="Times New Roman"
-									size="6" color="#ffffff">
-									Enthusiastic and eager to contribute to team success through hard work. Passionate to learn mathematics.
-								</font>
-							</h3>
-
-							<h2>
-								<font face="Verdana" size="6"
-									color="#4CAF50">
-									<!-- Freelance Programmer -->
-									Temporary Address: Balaju-Kathmandu, Nepal State: 03</br>
-									Permanent Address: Aarukharkha-Nuwakot, Nepal State: 03 </br>
-									E-mail: sumandhungana98@gmail.com</br>
-									Contact: (+977)9869047520</br>
-									<img src="d.png">
-								</font>
-							</h2>
-						</td>
-					</tr>
-				</table>
-			</td>
-		</tr>
-</table>
+  <script src="script.js"></script>
 </body>
 </html>
+
+
